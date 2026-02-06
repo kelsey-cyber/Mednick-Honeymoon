@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Mednick Honeymoon 🇬🇷🇮🇹💍</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Karla:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --greece-blue: #0077BE;
+            --greece-white: #FFFFFF;
+            --rome-terracotta: #D4876D;
+            --rome-gold: #D4AF37;
+            --dark-text: #1a1a1a;
+            --light-text: #666;
+            --bg-cream: #FBF8F3;
+            --shadow: rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Karla', sans-serif;
+            background: var(--bg-cream);
+            color: var(--dark-text);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--greece-blue) 0%, #005A8C 100%);
+            color: white;
+            padding: 2rem 1.5rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 1rem;
+            opacity: 0.95;
+            position: relative;
+            font-weight: 300;
+        }
+
+        /* Nav Tabs */
+        .nav-tabs {
+            display: flex;
+            background: white;
+            margin: -2rem 1rem 0;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px var(--shadow);
+            position: relative;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        .nav-tab {
+            flex: 1;
+            padding: 1rem;
+            background: none;
+            border: none;
+            font-family: 'Karla', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--light-text);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-tab.active {
+            color: var(--dark-text);
+        }
+
+        .nav-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--greece-blue), var(--rome-terracotta));
+            border-radius: 3px 3px 0 0;
+        }
+
+        /* Content Container */
+        .content {
+            padding: 2rem 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Day Cards */
+        .day-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .day-card:active {
+            transform: scale(0.98);
+        }
+
+        .day-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+
+        .day-number {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--greece-blue), #005A8C);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,119,190,0.3);
+        }
+
+        .day-number.rome {
+            background: linear-gradient(135deg, var(--rome-terracotta), #C07560);
+            box-shadow: 0 4px 12px rgba(212,135,109,0.3);
+        }
+
+        .day-title {
+            flex: 1;
+        }
+
+        .day-title h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .day-title p {
+            font-size: 0.85rem;
+            color: var(--light-text);
+            font-weight: 300;
+        }
+
+        .expand-icon {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            transition: transform 0.3s ease;
+        }
+
+        .day-card.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .day-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .day-card.expanded .day-details {
+            max-height: 2000px;
+        }
+
+        .activity {
+            padding: 1rem 0;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .activity:first-child {
+            border-top: none;
+            padding-top: 0.5rem;
+        }
+
+        .activity-time {
+            font-size: 0.8rem;
+            color: var(--greece-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .activity-name {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .activity-notes {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+
+        .activity-rating {
+            display: inline-block;
+            background: #FFF3E0;
+            color: #F57C00;
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Checklist */
+        .checklist-section {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        .checklist-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .checkbox-item:last-child {
+            border-bottom: none;
+        }
+
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--greece-blue);
+            border-radius: 6px;
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            margin-top: 2px;
+        }
+
+        .checkbox.checked {
+            background: var(--greece-blue);
+        }
+
+        .checkbox.checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 16px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .checkbox-label {
+            flex: 1;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            cursor: pointer;
+        }
+
+        /* Info Cards */
+        .info-card {
+            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+            border-radius: 16px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-card.warning {
+            background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+        }
+
+        .info-card h4 {
+            font-family: 'Karla', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: rgba(0,0,0,0.7);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid #f0f0f0;
+        }
+
+        .contact-item strong {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--light-text);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-item a {
+            color: var(--greece-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 1rem 3rem;
+            color: var(--light-text);
+            font-size: 0.85rem;
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--light-text);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Mednick Honeymoon 💍</h1>
+        <p>Santorini ✈️ Rome • 2026</p>
+    </div>
+
+    <div class="nav-tabs">
+        <button class="nav-tab active" data-tab="greece">🇬🇷 Santorini</button>
+        <button class="nav-tab" data-tab="rome">🇮🇹 Rome</button>
+        <button class="nav-tab" data-tab="checklist">✓ To-Do</button>
+        <button class="nav-tab" data-tab="contacts">📞 Info</button>
+    </div>
+
+    <div class="content">
+        <!-- SANTORINI TAB -->
+        <div class="tab-content active" id="greece">
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-number">1</div>
+                    <div class="day-title">
+                        <h3>Arrival & First Sunset</h3>
+                        <p>Welcome to Santorini!</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="day-details">
+                    <div class="info-card">
+                        <h4>💕 First Night in Paradise</h4>
+                        <p>Perfect way to start your honeymoon - stunning sunset, delicious dinner, and each other.</p>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">Evening</div>
+                        <div class="activity-name">Sunset of Santorini Viewpoint</div>
+                        <div class="activity-notes">Less crowded than Oia. Perfect spot to ease into the trip.</div>
+                        <span class="activity-rating">⭐ 4.8</span>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">7:30 PM</div>
+                        <div class="activity-name">Dinner at Ouzeri</div>
+                        <div class="activity-notes">Cordon Bleu-trained chef. Try stuffed tomatoes (Santorini specialty) and meatballs!</div>
+                        <span class="activity-rating">⭐ 4.5</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-number">2</div>
+                    <div class="day-title">
+                        <h3>Catamaran Cruise Day</h3>
+                        <p>Full day on the water!</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="day-details">
+                    <div class="info-card">
+                        <h4>🛥️ Book Ahead!</h4>
+                        <p>Choose Vista Yachting (Endless Blue), Santorini Sailing, or Sail Away. Includes swimming, BBQ lunch, hot springs, sunset viewing. Hotel pickup/dropoff included.</p>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">Morning Pickup</div>
+                        <div class="activity-name">Full Day Catamaran Cruise</div>
+                        <div class="activity-notes">Red Beach & White Beach views, snorkeling, swimming stops. Full day adventure!</div>
+                        <span class="activity-rating">⭐ 5.0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-number">3</div>
+                    <div class="day-title">
+                        <h3>Oia to Fira Hike</h3>
+                        <p>Epic caldera views!</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="day-details">
+                    <div class="info-card warning">
+                        <h4>⚠️ Start Early!</h4>
+                        <p>Take taxi to Oia by 7-8 AM. Wear GOOD hiking shoes, bring LOTS of water. 9-10 km, 2.5-3 hours. Brutal sun if you start late!</p>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">7:00 AM</div>
+                        <div class="activity-name">Hike Oia → Fira</div>
+                        <div class="activity-notes">Stunning caldera views entire way. Small shop halfway for water/snacks. Arrive back in Fira ~10 AM.</div>
+                        <span class="activity-rating">⭐ 5.0</span>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">7:30 PM</div>
+                        <div class="activity-name">Dinner at Theoni's</div>
+                        <div class="activity-notes">LEGENDARY stuffed calamari! Huge portions, complimentary shots & ice cream. Well-deserved!</div>
+                        <span class="activity-rating">⭐ 4.7</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-number">4</div>
+                    <div class="day-title">
+                        <h3>Wine Tour Day</h3>
+                        <p>3 wineries + lunch</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="day-details">
+                    <div class="activity">
+                        <div class="activity-time">Morning/Afternoon Pickup</div>
+                        <div class="activity-name">Wine Tour (5 hours)</div>
+                        <div class="activity-notes">Santorini Wine Adventure Tours or Santorini Wine Tour. Visits 3 wineries, includes lunch at traditional taverna. Hotel pickup/dropoff. Closed Sundays!</div>
+                        <span class="activity-rating">⭐ 4.9-5.0</span>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">8:00 PM</div>
+                        <div class="activity-name">Dinner at Kokkalo</div>
+                        <div class="activity-notes">Tomato fritters, veggie risotto, funk music atmosphere. CLOSED MONDAYS!</div>
+                        <span class="activity-rating">⭐ 4.6</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-number">5</div>
+                    <div class="day-title">
+                        <h3>Red Beach & Travel Day</h3>
+                        <p>Flying to Rome ~5 PM</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="day-details">
+                    <div class="activity">
+                        <div class="activity-time">8:00 AM</div>
+                        <div class="activity-name">Red Beach Visit</div>
+                        <div class="activity-notes">Early morning visit before checkout. 10-min walk from parking on rough path. Unique red volcanic sand, crystal clear water! Bring umbrella for shade.</div>
+                        <span class="activity-rating">⭐ 4.1</span>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">Afternoon</div>
+                        <div class="activity-name">✈️ Flight to Rome</div>
+                        <div class="activity-notes">Arrive Rome ~5 PM. Settle into hotel, light dinner nearby.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROME TAB -->
+        <div class="tab-content" id="rome">
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-number rome">1</div>
+                    <div class="day-title">
+                        <h3>Arrival Evening</h3>
+                        <p>Welcome to Roma!</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="day-details">
+                    <div class="info-card">
+                        <h4>💍 Welcome to Rome, Newlyweds!</h4>
+                        <p>First evening in the Eternal City. Take it easy, enjoy a romantic dinner, and soak it all in.</p>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">~5:00 PM</div>
+                        <div class="activity-name">Arrive from Santorini</div>
+                        <div class="activity-notes">Settle into hotel, quick rest</div>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">7:30 PM</div>
+                        <div class="activity-name">Dinner at Tonnarello | Paglia</div>
+                        <div class="activity-notes">Trastevere! Massive portions of carbonara or amatriciana. Perfect welcome to Rome!</div>
+                        <span class="activity-rating">⭐ 4.7</span>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">Evening (optional)</div>
+                        <div class="activity-name">Trevi Fountain Stroll</div>
+                        <div class="activity-notes">Beautiful at night, fewer crowds. Throw coin over left shoulder!</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-number rome">2</div>
+                    <div class="day-title">
+                        <h3>Ancient Rome</h3>
+                        <p>Colosseum & Forum</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="day-details">
+                    <div class="info-card warning">
+                        <h4>🎫 Pre-Book Required!</h4>
+                        <p>Book Colosseum + Roman Forum tickets ahead at colosseo.it</p>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">9:00 AM</div>
+                        <div class="activity-name">Colosseum</div>
+                        <div class="activity-notes">Combined ticket includes Forum & Palatine Hill. 2 hours.</div>
+                        <span class="activity-rating">⭐ 4.8</span>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">11:30 AM</div>
+                        <div class="activity-name">Roman Forum</div>
+                        <div class="activity-notes">Civic heart of ancient Rome. Use combined ticket. 2 hours.</div>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">2:00 PM</div>
+                        <div class="activity-name">Lunch at Barnum Roma</div>
+                        <div class="activity-notes">Pistachio croissant, specialty coffee. Near Capitoline Museums.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-number rome">3</div>
+                    <div class="day-title">
+                        <h3>Catacombs & Trastevere</h3>
+                        <p>Underground history</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="day-details">
+                    <div class="activity">
+                        <div class="activity-time">9:00 AM</div>
+                        <div class="activity-name">Catacombs Tour</div>
+                        <div class="activity-notes">San Sebastiano or Domitilla. €10-15, ~1 hour. Uber/taxi (€20-25) or bus 218. No photos underground!</div>
+                        <span class="activity-rating">⭐ 4.6</span>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">12:00 PM</div>
+                        <div class="activity-name">Capitoline Museums</div>
+                        <div class="activity-notes">World's oldest public museum. Capitoline Wolf, Roman sculptures. 2.5 hours.</div>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">3:30 PM</div>
+                        <div class="activity-name">Santa Maria in Trastevere</div>
+                        <div class="activity-notes">Stunning golden mosaics, one of Rome's oldest churches. Free!</div>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">6:30 PM</div>
+                        <div class="activity-name">Dinner at Il Segreto</div>
+                        <div class="activity-notes">Vatican area. Complimentary champagne, exceptional calamari & caccio e pepe!</div>
+                        <span class="activity-rating">⭐ 4.8</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-number rome">4</div>
+                    <div class="day-title">
+                        <h3>Art & Landmarks</h3>
+                        <p>Borghese & city center</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="day-details">
+                    <div class="info-card warning">
+                        <h4>🎫 BOOK WEEKS AHEAD!</h4>
+                        <p>Galleria Borghese has limited entry. Most critical booking!</p>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">9:00 AM</div>
+                        <div class="activity-name">Galleria Borghese</div>
+                        <div class="activity-notes">Incredible Bernini sculptures, Caravaggio paintings. 2-hour time slot.</div>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">12:00 PM</div>
+                        <div class="activity-name">Sant' Eustachio Caffè</div>
+                        <div class="activity-notes">Best espresso in Rome! Order at counter. Buy beans to take home!</div>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">1:00 PM</div>
+                        <div class="activity-name">Trevi Fountain</div>
+                        <div class="activity-notes">Throw coin over left shoulder. 30 min.</div>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">7:00 PM</div>
+                        <div class="activity-name">Dinner at Dar Bruttone</div>
+                        <div class="activity-notes">Monti neighborhood. Truffle carbonara so good people order seconds! Communal seating, fun vibe.</div>
+                        <span class="activity-rating">⭐ 4.8</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-number rome">5</div>
+                    <div class="day-title">
+                        <h3>Churches & Final Day</h3>
+                        <p>Gelato marathon!</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="day-details">
+                    <div class="activity">
+                        <div class="activity-time">9:00 AM</div>
+                        <div class="activity-name">Santa Maria Maggiore</div>
+                        <div class="activity-notes">Papal basilica. Stunning mosaics, gilded ceiling. Mostly free!</div>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">10:30 AM</div>
+                        <div class="activity-name">San Giovanni in Laterano</div>
+                        <div class="activity-notes">The Pope's cathedral. Less crowded than St. Peter's, equally impressive!</div>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">12:30 PM</div>
+                        <div class="activity-name">Come il Latte (Gelato)</div>
+                        <div class="activity-notes">Try ricotta, stracciatella, pistachio. Fresh whipped cream added!</div>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">4:00 PM</div>
+                        <div class="activity-name">La Romana dal 1947 (Gelato)</div>
+                        <div class="activity-notes">Historic gelateria. Try Crema Dal 1947! Can upgrade to chocolate cone.</div>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-time">Evening</div>
+                        <div class="activity-name">Late Departure</div>
+                        <div class="activity-notes">Extra time for final shopping, relaxing, or one more gelato!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHECKLIST TAB -->
+        <div class="tab-content" id="checklist">
+            <div class="checklist-section">
+                <h3>📋 Book NOW (8-12 weeks ahead)</h3>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        <strong>Rome: Galleria Borghese tickets</strong> - MOST CRITICAL! Books months ahead. galleriaborghese.beniculturali.it
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        <strong>Rome: Colosseum + Forum tickets</strong> - colosseo.it - Day 2, 9 AM
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        <strong>Santorini: Catamaran Cruise</strong> - Vista Yachting, Santorini Sailing, or Sail Away. Day 2.
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        <strong>Santorini: Wine Tour</strong> - Santorini Wine Adventure Tours or Santorini Wine Tour. Day 4.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-section">
+                <h3>✈️ 1 Week Before</h3>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Confirm all tour pickup times/locations
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Download Google Maps offline for Fira & Rome
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Notify bank/credit cards of travel
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Get €200-300 cash
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Arrange taxi for Oia hike morning (Day 3)
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-section">
+                <h3>🎒 Pack Essential</h3>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        <strong>HIKING SHOES</strong> - Essential for Oia-Fira hike!
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Large water bottles (2L+ for hike)
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Swimsuit for catamaran
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Beach umbrella for Red Beach
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Comfortable walking shoes for Rome cobblestones
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Sunscreen, hat, sunglasses
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        EU power adapters (Type C & F)
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Printed tickets: Borghese, Colosseum
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card warning">
+                <h4>⚠️ Important Reminders</h4>
+                <p>• Oia-Fira hike Day 3: START 7-8 AM!<br>
+                • Red Beach: 10-min rough path walk<br>
+                • Kokkalo closed Mondays<br>
+                • Wine Tours closed Sundays<br>
+                • Angelo's closed Mon-Tue (if choosing)</p>
+            </div>
+        </div>
+
+        <!-- CONTACTS TAB -->
+        <div class="tab-content" id="contacts">
+            <div class="checklist-section">
+                <h3>🇬🇷 Santorini Contacts</h3>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <strong>Vista Yachting</strong>
+                        <a href="tel:+302286024422">+30 2286 024422</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Santorini Wine Adventure</strong>
+                        <a href="tel:+302286034123">+30 2286 034123</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Emergency (Greece)</strong>
+                        <a href="tel:112">112</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-section">
+                <h3>🇮🇹 Rome Contacts</h3>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <strong>Catacombs San Sebastiano</strong>
+                        <a href="tel:+390667850350">+39 06 785 0350</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Emergency (Italy)</strong>
+                        <a href="tel:112">112</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h4>💰 Estimated Tour Costs</h4>
+                <p><strong>Catamaran Cruise:</strong> €100-150 per person<br>
+                <strong>Wine Tour:</strong> €70-100 per person<br>
+                <strong>Galleria Borghese:</strong> €15-20<br>
+                <strong>Colosseum + Forum:</strong> €18-24<br>
+                <strong>Catacombs:</strong> €10-15</p>
+            </div>
+
+            <div class="info-card warning">
+                <h4>🏨 Hotels</h4>
+                <p><strong>Santorini Hotel:</strong> _____________<br>
+                <strong>Rome Hotel:</strong> _____________</p>
+            </div>
+
+            <div class="info-card">
+                <h4>📱 Useful Apps</h4>
+                <p>• Google Maps (download offline!)<br>
+                • Google Translate<br>
+                • Your banking app for tap-to-pay</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Made with love for the Mednick Honeymoon ❤️<br>
+        Celebrating your forever! 💍✨
+    </div>
+
+    <script>
+        // Tab switching
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Update active tab
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Show corresponding content
+                const tabName = tab.getAttribute('data-tab');
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(tabName).classList.add('active');
+                
+                // Scroll to top
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        });
+
+        // Expandable day cards
+        function toggleDay(header) {
+            const card = header.parentElement;
+            card.classList.toggle('expanded');
+        }
+
+        // Checkbox functionality with localStorage
+        function toggleCheck(checkbox) {
+            checkbox.classList.toggle('checked');
+            saveCheckboxState();
+        }
+
+        // Save checkbox states to localStorage
+        function saveCheckboxState() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const states = Array.from(checkboxes).map(cb => cb.classList.contains('checked'));
+            localStorage.setItem('travelCheckboxes', JSON.stringify(states));
+        }
+
+        // Load checkbox states from localStorage
+        function loadCheckboxState() {
+            const saved = localStorage.getItem('travelCheckboxes');
+            if (saved) {
+                const states = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checkbox');
+                checkboxes.forEach((cb, index) => {
+                    if (states[index]) {
+                        cb.classList.add('checked');
+                    }
+                });
+            }
+        }
+
+        // Load saved state on page load
+        window.addEventListener('load', loadCheckboxState);
+
+        // Add service worker for offline capability
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('data:text/javascript;base64,');
+        }
+    </script>
+</body>
+</html>
