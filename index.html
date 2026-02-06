@@ -402,7 +402,8 @@
         <button class="nav-tab active" data-tab="greece">🇬🇷 Santorini</button>
         <button class="nav-tab" data-tab="rome">🇮🇹 Rome</button>
         <button class="nav-tab" data-tab="checklist">✓ To-Do</button>
-        <button class="nav-tab" data-tab="contacts">📞 Info</button>
+        <button class="nav-tab" data-tab="info">📚 Info</button>
+        <button class="nav-tab" data-tab="contacts">📞 Contact</button>
     </div>
 
     <div class="content">
@@ -735,7 +736,39 @@
         <!-- CHECKLIST TAB -->
         <div class="tab-content" id="checklist">
             <div class="checklist-section">
+                <h3>🍽️ Restaurant Reservations (4-6 weeks ahead)</h3>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        <strong>Il Segreto (Rome)</strong> - Day 3 dinner. Popular! segretoristorante.com or call +39 376 192 0922
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        <strong>Dar Bruttone (Rome)</strong> - Day 4 dinner. Tiny place, books up! darbruttonerionemonti.com or call +39 06 540 2607
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        <strong>Theoni's (Santorini)</strong> - Day 3 dinner after hike. Usually walk-in OK but can call ahead
+                    </div>
+                </div>
+                <div class="info-card" style="margin-top: 1rem;">
+                    <h4>💡 Tip</h4>
+                    <p>Most Santorini restaurants don't take reservations. Just show up! Rome restaurants fill up more - book the two above for sure.</p>
+                </div>
+            </div>
+
+            <div class="checklist-section">
                 <h3>📋 Book NOW (8-12 weeks ahead)</h3>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        <strong>✈️ BOOK FLIGHTS:</strong> Santorini → Rome (May 5) AND Rome → London (May 8)
+                    </div>
+                </div>
                 <div class="checkbox-item">
                     <div class="checkbox" onclick="toggleCheck(this)"></div>
                     <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
@@ -764,6 +797,12 @@
 
             <div class="checklist-section">
                 <h3>✈️ 1 Week Before</h3>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Ask Limestone Suites about complimentary airport pickup
+                    </div>
+                </div>
                 <div class="checkbox-item">
                     <div class="checkbox" onclick="toggleCheck(this)"></div>
                     <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
@@ -797,53 +836,145 @@
             </div>
 
             <div class="checklist-section">
-                <h3>🎒 Pack Essential</h3>
+                <h3>🎒 Pack Essentials</h3>
+                
+                <h4 style="font-size: 1rem; margin: 1rem 0 0.5rem; color: var(--greece-blue);">🥾 Santorini-Specific</h4>
                 <div class="checkbox-item">
                     <div class="checkbox" onclick="toggleCheck(this)"></div>
                     <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
-                        <strong>HIKING SHOES</strong> - Essential for Oia-Fira hike!
+                        <strong>HIKING SHOES with good grip</strong> - Essential for Oia-Fira hike! Rocky volcanic terrain.
                     </div>
                 </div>
                 <div class="checkbox-item">
                     <div class="checkbox" onclick="toggleCheck(this)"></div>
                     <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
-                        Large water bottles (2L+ for hike)
+                        Reusable water bottles (2L capacity for hike day)
                     </div>
                 </div>
                 <div class="checkbox-item">
                     <div class="checkbox" onclick="toggleCheck(this)"></div>
                     <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
-                        Swimsuit for catamaran
+                        Swimsuits (2 each - for catamaran & Red Beach)
                     </div>
                 </div>
                 <div class="checkbox-item">
                     <div class="checkbox" onclick="toggleCheck(this)"></div>
                     <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
-                        Beach umbrella for Red Beach
+                        Beach umbrella or parasol for shade (Red Beach has limited)
                     </div>
                 </div>
                 <div class="checkbox-item">
                     <div class="checkbox" onclick="toggleCheck(this)"></div>
                     <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
-                        Comfortable walking shoes for Rome cobblestones
+                        Light jacket/cardigan for boat cruise & evenings
                     </div>
                 </div>
                 <div class="checkbox-item">
                     <div class="checkbox" onclick="toggleCheck(this)"></div>
                     <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
-                        Sunscreen, hat, sunglasses
+                        Sunglasses & hat with wide brim
+                    </div>
+                </div>
+
+                <h4 style="font-size: 1rem; margin: 1rem 0 0.5rem; color: var(--rome-terracotta);">🏛️ Rome-Specific</h4>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Comfortable walking shoes (cobblestones!) - broken in before trip
                     </div>
                 </div>
                 <div class="checkbox-item">
                     <div class="checkbox" onclick="toggleCheck(this)"></div>
                     <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
-                        EU power adapters (Type C & F)
+                        <strong>Modest clothing for churches</strong> - covered shoulders & knees (lightweight scarf works!)
                     </div>
                 </div>
                 <div class="checkbox-item">
                     <div class="checkbox" onclick="toggleCheck(this)"></div>
                     <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
-                        Printed tickets: Borghese, Colosseum
+                        Small day backpack or crossbody bag (hands-free for sightseeing)
+                    </div>
+                </div>
+
+                <h4 style="font-size: 1rem; margin: 1rem 0 0.5rem;">✈️ General Travel</h4>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        <strong>EU power adapters - Type C & F</strong> (3-4 recommended for phones, laptops, hairdryer)
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        <strong>Your hairdryer + adapter</strong> (Make sure it's dual voltage 110-240V!)
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Sunscreen SPF 50+ (Mediterranean sun is strong!)
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Portable phone charger/power bank
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Medications & basic first aid (band-aids, pain reliever, anti-nausea for boat)
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Copies of passports, travel insurance, tickets (digital & printed)
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Small umbrella (just in case + shade)
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Reusable shopping bag (for souvenirs, beach trips)
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Camera or ensure phone storage cleared
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Snacks for flights & long days
+                    </div>
+                </div>
+
+                <h4 style="font-size: 1rem; margin: 1rem 0 0.5rem;">💕 Honeymoon Extras</h4>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Nice outfit for romantic dinners
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Travel journal or notebook for memories
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        Small bag for collecting small souvenirs/memories
                     </div>
                 </div>
             </div>
@@ -856,6 +987,296 @@
                 • Wine Tours closed Sundays<br>
                 • Angelo's closed Mon-Tue (if choosing)</p>
             </div>
+        </div>
+
+        <!-- INFO TAB (NEW) -->
+        <div class="tab-content" id="info">
+            
+            <!-- DAY COUNTER -->
+            <div class="checklist-section" style="background: linear-gradient(135deg, #FFE5E5 0%, #FFD0D0 100%); text-align: center; padding: 2rem 1.5rem;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">💍 Honeymoon Day Counter</h3>
+                <div id="dayCounter" style="font-size: 3rem; font-family: 'Playfair Display', serif; color: var(--greece-blue); margin: 1rem 0;">
+                    Day ?
+                </div>
+                <p id="dayMessage" style="font-size: 1.1rem; font-style: italic; color: var(--dark-text);">
+                    Loading...
+                </p>
+            </div>
+
+            <!-- FLIGHT DETAILS -->
+            <div class="checklist-section">
+                <h3>✈️ Flight Details</h3>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--greece-blue);">🇺🇸 → 🇬🇷 Las Vegas to Santorini (Apr 30)</h4>
+                    
+                    <div style="background: #F0F8FF; padding: 1rem; border-radius: 12px; margin-bottom: 0.75rem;">
+                        <strong>Flight 1: DL0755</strong><br>
+                        Las Vegas (LAS) → Atlanta (ATL)<br>
+                        Arrival: 12:49 PM EST
+                    </div>
+                    
+                    <div style="background: #F0F8FF; padding: 1rem; border-radius: 12px; margin-bottom: 0.75rem;">
+                        <strong>Flight 2: DL0222</strong><br>
+                        Atlanta (ATL) → Athens (ATH)<br>
+                        Arrival: 11:00 AM (next day)
+                    </div>
+                    
+                    <div style="background: #F0F8FF; padding: 1rem; border-radius: 12px; margin-bottom: 0.75rem;">
+                        <strong>Flight 3: GQ0350</strong><br>
+                        Athens (ATH) → Santorini (JTR)<br>
+                        Arrival: 2:55 PM local time 🎉
+                    </div>
+                    
+                    <div class="info-card">
+                        <h4>💡 Travel Day Tips</h4>
+                        <p>• Download Delta app for real-time updates<br>
+                        • Long layover in ATL - grab food before international flight<br>
+                        • Athens layover - check gate for Santorini flight early<br>
+                        • Arrive Santorini 2:55 PM - perfect timing for sunset! 🌅</p>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--rome-terracotta);">🇬🇷 → 🇮🇹 Santorini to Rome (May 5)</h4>
+                    <div style="background: #FFF5F0; padding: 1rem; border-radius: 12px;">
+                        <strong>⚠️ BOOK THIS FLIGHT!</strong><br>
+                        Not booked yet - add details when confirmed
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: #4A5568;">🇮🇹 → 🇬🇧 Rome to London (May 8)</h4>
+                    <div style="background: #F7F7F7; padding: 1rem; border-radius: 12px;">
+                        <strong>⚠️ BOOK THIS FLIGHT!</strong><br>
+                        Not booked yet - add details when confirmed
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY COUNTER -->
+            <div class="checklist-section">
+                <h3>🌤️ Weather & What to Wear</h3>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--greece-blue);">🇬🇷 Santorini (Apr 30 - May 5)</h4>
+                    <div style="background: #F0F8FF; padding: 1rem; border-radius: 12px; margin-bottom: 0.75rem;">
+                        <strong>Temperature:</strong> 68-75°F (20-24°C)<br>
+                        <strong>Conditions:</strong> Mostly sunny, minimal rain<br>
+                        <strong>What to Wear:</strong> Light layers, sundresses, shorts, swimsuit. Bring light jacket for evenings and boat cruise. HIKING SHOES essential for Day 3!
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--rome-terracotta);">🇮🇹 Rome (May 5 - 8)</h4>
+                    <div style="background: #FFF5F0; padding: 1rem; border-radius: 12px;">
+                        <strong>Temperature:</strong> 64-73°F (18-23°C)<br>
+                        <strong>Conditions:</strong> Sunny with occasional clouds<br>
+                        <strong>What to Wear:</strong> Comfortable walking shoes (cobblestones!), light layers. Modest clothing for churches (covered shoulders/knees). Light cardigan for evenings.
+                    </div>
+                </div>
+            </div>
+
+            <!-- TRANSPORTATION GUIDE -->
+            <div class="checklist-section">
+                <h3>🚕 Transportation Guide</h3>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">🇬🇷 Santorini Airport → Limestone Suites</h4>
+                    <div style="background: #F8F8F8; padding: 1rem; border-radius: 12px; margin-bottom: 0.5rem;">
+                        <strong>Distance:</strong> ~6 km (4 miles)<br>
+                        <strong>Time:</strong> 10-15 minutes<br>
+                        <strong>Best Option:</strong> Pre-book hotel transfer OR taxi at airport<br>
+                        <strong>Cost:</strong> €15-25<br>
+                        <strong>Apps:</strong> Beat (Greek ride-hailing app) or FreeNow
+                    </div>
+                    <div class="info-card">
+                        <h4>💡 Tip</h4>
+                        <p>Ask Limestone Suites if they offer complimentary airport pickup - many luxury hotels do!</p>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">🇮🇹 Rome Airport → Hotel Artemide</h4>
+                    <div style="background: #F8F8F8; padding: 1rem; border-radius: 12px; margin-bottom: 0.5rem;">
+                        <strong>From:</strong> Fiumicino Airport (FCO)<br>
+                        <strong>Distance:</strong> 32 km (20 miles)<br>
+                        <strong>Time:</strong> 45-60 minutes<br>
+                        <strong>Options:</strong><br>
+                        • <strong>Leonardo Express Train</strong> - €14/person, 32 min to Termini (hotel is 5 min walk)<br>
+                        • <strong>Taxi</strong> - Fixed rate €50 to city center<br>
+                        • <strong>Uber/FreeNow</strong> - €45-60<br>
+                        <strong>Recommended:</strong> Leonardo Express + short walk (easiest with luggage)
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">🚶 Walking Times in Rome</h4>
+                    <div style="background: #F8F8F8; padding: 1rem; border-radius: 12px;">
+                        <strong>Hotel Artemide → Colosseum:</strong> 20 min walk<br>
+                        <strong>Hotel Artemide → Trevi Fountain:</strong> 15 min walk<br>
+                        <strong>Hotel Artemide → Termini Station:</strong> 5 min walk<br>
+                        <strong>Trastevere → Hotel:</strong> 30 min walk OR 15 min taxi
+                    </div>
+                </div>
+
+                <div class="info-card" style="margin-top: 1rem;">
+                    <h4>🚖 Taxi Apps for Rome</h4>
+                    <p><strong>FreeNow</strong> - Most reliable, like Uber<br>
+                    <strong>Uber</strong> - Available but limited<br>
+                    <strong>IT Taxi</strong> - Official Rome taxi app<br>
+                    Download before you arrive!</p>
+                </div>
+            </div>
+
+            <!-- WINE TOUR DETAILS -->
+            <div class="checklist-section">
+                <h3>🍷 Wine Tour - Saturday, May 3</h3>
+                
+                <div class="info-card">
+                    <h4>✅ Perfect Timing!</h4>
+                    <p>May 3 is Saturday - Santorini Wine Adventure Tours is OPEN! (They're closed Sundays)</p>
+                </div>
+
+                <div style="margin-top: 1rem;">
+                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">📋 Booking Details</h4>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <strong>Santorini Wine Adventure Tours</strong><br>
+                            Phone: <a href="tel:+302286034123">+30 2286 034123</a><br>
+                            Website: <a href="https://www.winetoursantorini.com/" target="_blank">winetoursantorini.com</a><br>
+                            Rating: ⭐ 4.9 (391 reviews)
+                        </div>
+                        <div class="contact-item">
+                            <strong>Alternative: Santorini Wine Tour</strong><br>
+                            Rating: ⭐ 5.0 (137 reviews)<br>
+                            Also excellent option!
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1rem;">
+                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">📍 What's Included</h4>
+                    <div style="background: #F8F8F8; padding: 1rem; border-radius: 12px;">
+                        ✓ Hotel pickup & dropoff<br>
+                        ✓ Visit 3 traditional wineries<br>
+                        ✓ Wine tastings at each location<br>
+                        ✓ Lunch at traditional taverna<br>
+                        ✓ Learn about volcanic soil & unique grapes<br>
+                        ✓ Duration: ~5 hours<br>
+                        ✓ Cost: €70-100 per person
+                    </div>
+                </div>
+
+                <div class="info-card warning" style="margin-top: 1rem;">
+                    <h4>💡 Pro Tips</h4>
+                    <p>• Book 4-6 weeks ahead (popular in May!)<br>
+                    • Morning tour better if you want dinner after<br>
+                    • Try Assyrtiko (white) and Vinsanto (dessert wine)<br>
+                    • Bring camera - vineyards have stunning caldera views!</p>
+                </div>
+            </div>
+
+            <!-- EMERGENCY PHRASES -->
+            <div class="checklist-section">
+                <h3>💬 Essential Phrases</h3>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--greece-blue);">🇬🇷 Greek Phrases</h4>
+                    <div style="background: #F0F8FF; padding: 1rem; border-radius: 12px; line-height: 1.8;">
+                        <strong>Hello</strong> - Yassas (YAH-sahs)<br>
+                        <strong>Thank you</strong> - Efharisto (ef-kha-ree-STOH)<br>
+                        <strong>Please</strong> - Parakalo (pah-rah-kah-LOH)<br>
+                        <strong>Excuse me</strong> - Signomi (see-GNOH-mee)<br>
+                        <strong>Yes / No</strong> - Ne / Ochi (neh / OH-khee)<br>
+                        <strong>How much?</strong> - Poso kani? (POH-soh KAH-nee)<br>
+                        <strong>Check please</strong> - To logariasmo parakalo (toh loh-gah-ree-ah-SMOH pah-rah-kah-LOH)<br>
+                        <strong>Delicious!</strong> - Nostimo! (NOH-stee-moh)<br>
+                        <strong>Cheers!</strong> - Yamas! (YAH-mahs)
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--rome-terracotta);">🇮🇹 Italian Phrases</h4>
+                    <div style="background: #FFF5F0; padding: 1rem; border-radius: 12px; line-height: 1.8;">
+                        <strong>Hello</strong> - Ciao (CHOW) / Buongiorno (bwohn-JOHR-noh)<br>
+                        <strong>Thank you</strong> - Grazie (GRAHT-see-eh)<br>
+                        <strong>Please</strong> - Per favore (pehr fah-VOH-reh)<br>
+                        <strong>Excuse me</strong> - Scusi (SKOO-zee)<br>
+                        <strong>Yes / No</strong> - Sì / No (see / noh)<br>
+                        <strong>How much?</strong> - Quanto costa? (KWAN-toh KOH-stah)<br>
+                        <strong>Check please</strong> - Il conto per favore (eel KOHN-toh pehr fah-VOH-reh)<br>
+                        <strong>Delicious!</strong> - Delizioso! (deh-lee-tsee-OH-soh)<br>
+                        <strong>Cheers!</strong> - Salute! (sah-LOO-teh)<br>
+                        <strong>Where is...?</strong> - Dov'è...? (doh-VEH)
+                    </div>
+                </div>
+
+                <div class="info-card" style="margin-top: 1rem;">
+                    <h4>💡 Language Tips</h4>
+                    <p>• English widely spoken in tourist areas<br>
+                    • Locals LOVE when you try their language<br>
+                    • Download Google Translate offline<br>
+                    • Point & smile works everywhere! 😊</p>
+                </div>
+            </div>
+
+            <!-- BACKUP PLANS -->
+            <div class="checklist-section">
+                <h3>🌧️ Backup Plans (Just in Case!)</h3>
+                
+                <div class="info-card">
+                    <h4>☀️ Good News!</h4>
+                    <p>May in Greece and Italy is typically gorgeous! But here are alternatives if weather doesn't cooperate:</p>
+                </div>
+
+                <div style="margin-top: 1rem;">
+                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">If Oia-Fira Hike Too Challenging:</h4>
+                    <div style="background: #F8F8F8; padding: 1rem; border-radius: 12px; margin-bottom: 1rem;">
+                        <strong>Option 1:</strong> Take bus/taxi to Oia, explore the town, take bus/taxi back to Fira<br>
+                        <strong>Option 2:</strong> Cable car down to old port in Fira, explore, cable car back up<br>
+                        <strong>Option 3:</strong> Visit Pyrgos village - cute, less touristy, amazing views, minimal walking<br>
+                        <strong>Option 4:</strong> Relax at hotel pool, spa day, sunset from Fira
+                    </div>
+                </div>
+
+                <div style="margin-top: 1rem;">
+                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">If Rain in Santorini:</h4>
+                    <div style="background: #F8F8F8; padding: 1rem; border-radius: 12px; margin-bottom: 1rem;">
+                        • Wine tour still runs (indoor tastings!)<br>
+                        • Museum of Prehistoric Thera in Fira<br>
+                        • Shopping in Fira boutiques<br>
+                        • Cooking class (many hotels offer)<br>
+                        • Spa treatment at hotel<br>
+                        • Long lunch at cozy taverna
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">If Rain in Rome:</h4>
+                    <div style="background: #F8F8F8; padding: 1rem; border-radius: 12px;">
+                        • All museums/churches still perfect!<br>
+                        • Vatican Museums (not on current itinerary but amazing)<br>
+                        • Galleria Borghese (already planned - even better in rain)<br>
+                        • Long lunch at traditional trattoria<br>
+                        • Shopping on Via del Corso<br>
+                        • Coffee & pastry hopping<br>
+                        • Pantheon (covered inside!)
+                    </div>
+                </div>
+
+                <div class="info-card warning" style="margin-top: 1rem;">
+                    <h4>⚡ Energy Savers</h4>
+                    <p>Honeymoons are marathons, not sprints! If you need to skip an activity:<br>
+                    • Day 3 hike → Sleep in, leisurely breakfast<br>
+                    • Day 5 Red Beach → Skip entirely, relax before travel<br>
+                    • Rome churches → Pick just one favorite<br>
+                    • Any meal → Order room service, nap instead!<br>
+                    <br>
+                    It's YOUR honeymoon - do what feels right! ❤️</p>
+                </div>
+            </div>
+
         </div>
 
         <!-- CONTACTS TAB -->
@@ -983,6 +1404,53 @@
 
         // Load saved state on page load
         window.addEventListener('load', loadCheckboxState);
+
+        // Honeymoon Day Counter
+        function updateDayCounter() {
+            const startDate = new Date('2026-04-30T15:00:00'); // April 30, 3 PM
+            const endDate = new Date('2026-05-08T23:59:59'); // May 8, end of day
+            const now = new Date();
+            
+            const dayCounterEl = document.getElementById('dayCounter');
+            const dayMessageEl = document.getElementById('dayMessage');
+            
+            if (now < startDate) {
+                // Before trip
+                const daysUntil = Math.ceil((startDate - now) / (1000 * 60 * 60 * 24));
+                dayCounterEl.textContent = daysUntil + ' days';
+                dayMessageEl.textContent = daysUntil === 1 
+                    ? 'Tomorrow your honeymoon begins! 🎉' 
+                    : 'Until your honeymoon begins! 🎉';
+            } else if (now >= startDate && now <= endDate) {
+                // During trip
+                const dayNumber = Math.floor((now - startDate) / (1000 * 60 * 60 * 24)) + 1;
+                dayCounterEl.textContent = 'Day ' + dayNumber;
+                
+                const messages = [
+                    "Welcome to paradise! Your honeymoon has begun! 💕",
+                    "Making memories on the magical caldera! ✨",
+                    "Epic adventures await today! 🥾",
+                    "Sipping wine with your love! 🍷",
+                    "Travel day - Rome awaits! ✈️",
+                    "Welcome to the Eternal City! 🏛️",
+                    "Exploring ancient wonders together! ⚡",
+                    "More Roman adventures! 🍝",
+                    "Final day in Rome - cherish every moment! 💫"
+                ];
+                
+                dayMessageEl.textContent = messages[dayNumber - 1] || "Every moment is precious! 💍";
+            } else {
+                // After trip
+                dayCounterEl.textContent = 'Complete! ✓';
+                dayMessageEl.textContent = 'What amazing memories you created! 💕';
+            }
+        }
+        
+        // Update counter on load
+        updateDayCounter();
+        
+        // Update counter every hour
+        setInterval(updateDayCounter, 3600000);
 
         // Add service worker for offline capability
         if ('serviceWorker' in navigator) {
