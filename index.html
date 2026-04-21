@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +41,6 @@
             font-weight: 700;
         }
 
-        /* Header */
         .header {
             background: linear-gradient(135deg, var(--greece-blue) 0%, #005A8C 100%);
             color: white;
@@ -55,31 +53,16 @@
         .header::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: 
                 radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%);
             pointer-events: none;
         }
 
-        .header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            position: relative;
-            letter-spacing: -0.5px;
-        }
+        .header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; position: relative; letter-spacing: -0.5px; }
+        .header p { font-size: 1rem; opacity: 0.95; position: relative; font-weight: 300; }
 
-        .header p {
-            font-size: 1rem;
-            opacity: 0.95;
-            position: relative;
-            font-weight: 300;
-        }
-
-        /* Nav Tabs */
         .nav-tabs {
             display: flex;
             background: white;
@@ -93,11 +76,11 @@
 
         .nav-tab {
             flex: 1;
-            padding: 1rem;
+            padding: 0.85rem 0.3rem;
             background: none;
             border: none;
             font-family: 'Karla', sans-serif;
-            font-size: 0.95rem;
+            font-size: 0.78rem;
             font-weight: 600;
             color: var(--light-text);
             cursor: pointer;
@@ -105,43 +88,31 @@
             position: relative;
         }
 
-        .nav-tab.active {
-            color: var(--dark-text);
-        }
+        .nav-tab.active { color: var(--dark-text); }
 
         .nav-tab.active::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 10%;
-            right: 10%;
+            bottom: 0; left: 10%; right: 10%;
             height: 3px;
             background: linear-gradient(90deg, var(--greece-blue), var(--rome-terracotta));
             border-radius: 3px 3px 0 0;
         }
 
-        /* Content Container */
         .content {
             padding: 2rem 1rem;
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.4s ease;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
+        .tab-content { display: none; animation: fadeIn 0.4s ease; }
+        .tab-content.active { display: block; }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Day Cards */
         .day-card {
             background: white;
             border-radius: 20px;
@@ -151,9 +122,7 @@
             transition: transform 0.3s ease;
         }
 
-        .day-card:active {
-            transform: scale(0.98);
-        }
+        .day-card:active { transform: scale(0.98); }
 
         .day-header {
             display: flex;
@@ -164,8 +133,7 @@
         }
 
         .day-number {
-            width: 48px;
-            height: 48px;
+            width: 48px; height: 48px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--greece-blue), #005A8C);
             color: white;
@@ -184,69 +152,26 @@
             box-shadow: 0 4px 12px rgba(212,135,109,0.3);
         }
 
-        .day-title {
-            flex: 1;
-        }
+        .day-title { flex: 1; }
+        .day-title h3 { font-size: 1.3rem; margin-bottom: 0.25rem; }
+        .day-title p { font-size: 0.85rem; color: var(--light-text); font-weight: 300; }
 
-        .day-title h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.25rem;
-        }
+        .expand-icon { font-size: 1.2rem; color: var(--light-text); transition: transform 0.3s ease; }
+        .day-card.expanded .expand-icon { transform: rotate(180deg); }
 
-        .day-title p {
-            font-size: 0.85rem;
-            color: var(--light-text);
-            font-weight: 300;
-        }
-
-        .expand-icon {
-            font-size: 1.2rem;
-            color: var(--light-text);
-            transition: transform 0.3s ease;
-        }
-
-        .day-card.expanded .expand-icon {
-            transform: rotate(180deg);
-        }
-
-        .day-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-        }
-
-        .day-card.expanded .day-details {
-            max-height: 2000px;
-        }
+        .day-details { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .day-card.expanded .day-details { max-height: 3000px; }
 
         .activity {
             padding: 1rem 0;
             border-top: 1px solid #f0f0f0;
         }
 
-        .activity:first-child {
-            border-top: none;
-            padding-top: 0.5rem;
-        }
+        .activity:first-child { border-top: none; padding-top: 0.5rem; }
 
-        .activity-time {
-            font-size: 0.8rem;
-            color: var(--greece-blue);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .activity-name {
-            font-weight: 600;
-            font-size: 1.05rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .activity-notes {
-            font-size: 0.9rem;
-            color: var(--light-text);
-            line-height: 1.6;
-        }
+        .activity-time { font-size: 0.8rem; color: var(--greece-blue); font-weight: 600; margin-bottom: 0.5rem; }
+        .activity-name { font-weight: 600; font-size: 1.05rem; margin-bottom: 0.5rem; }
+        .activity-notes { font-size: 0.9rem; color: var(--light-text); line-height: 1.6; }
 
         .activity-rating {
             display: inline-block;
@@ -259,7 +184,169 @@
             margin-top: 0.5rem;
         }
 
-        /* Checklist */
+        /* ===== FOOD TAB STYLES ===== */
+        .food-section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .food-section-header:first-of-type { margin-top: 0; }
+
+        .food-section-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, #e0e0e0, transparent);
+        }
+
+        .food-section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            white-space: nowrap;
+        }
+
+        .restaurant-card {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 16px var(--shadow);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        .restaurant-card:active { transform: scale(0.98); }
+
+        .restaurant-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.1rem 1.25rem 0.75rem;
+        }
+
+        .restaurant-emoji {
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        .restaurant-meta { flex: 1; min-width: 0; }
+
+        .restaurant-name {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .restaurant-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+            margin-top: 0.35rem;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.15rem 0.5rem;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .tag-vibe { background: #EEF2FF; color: #4338CA; }
+        .tag-price { background: #F0FDF4; color: #166534; }
+        .tag-walk { background: #FFF7ED; color: #C2410C; }
+
+        .restaurant-stars {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #F59E0B;
+            white-space: nowrap;
+        }
+
+        .restaurant-body {
+            padding: 0 1.25rem 1rem;
+            border-top: 1px solid #f5f5f5;
+        }
+
+        .restaurant-desc {
+            font-size: 0.88rem;
+            color: var(--light-text);
+            line-height: 1.6;
+            margin-top: 0.75rem;
+        }
+
+        .restaurant-order {
+            margin-top: 0.75rem;
+            background: #FAFAFA;
+            border-radius: 10px;
+            padding: 0.6rem 0.85rem;
+        }
+
+        .restaurant-order strong {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--greece-blue);
+        }
+
+        .restaurant-order p {
+            font-size: 0.85rem;
+            color: var(--dark-text);
+            margin-top: 0.2rem;
+            line-height: 1.5;
+        }
+
+        .maps-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            margin: 0.85rem 1.25rem 1rem;
+            padding: 0.65rem;
+            background: linear-gradient(135deg, var(--greece-blue), #005A8C);
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            font-family: 'Karla', sans-serif;
+            transition: opacity 0.2s;
+        }
+
+        .maps-btn:active { opacity: 0.85; }
+        .maps-btn.rome { background: linear-gradient(135deg, var(--rome-terracotta), #C07560); }
+
+        .food-map-embed {
+            width: 100%;
+            height: 220px;
+            border-radius: 16px;
+            border: none;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .map-label {
+            font-size: 0.8rem;
+            color: var(--light-text);
+            text-align: center;
+            margin-top: -1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .nearby-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 0.15rem 0.5rem;
+            border-radius: 20px;
+            margin-left: 0.4rem;
+            vertical-align: middle;
+        }
+
+        /* ===== EXISTING STYLES ===== */
         .checklist-section {
             background: white;
             border-radius: 20px;
@@ -284,13 +371,10 @@
             border-bottom: 1px solid #f5f5f5;
         }
 
-        .checkbox-item:last-child {
-            border-bottom: none;
-        }
+        .checkbox-item:last-child { border-bottom: none; }
 
         .checkbox {
-            width: 24px;
-            height: 24px;
+            width: 24px; height: 24px;
             border: 2px solid var(--greece-blue);
             border-radius: 6px;
             flex-shrink: 0;
@@ -300,28 +384,19 @@
             margin-top: 2px;
         }
 
-        .checkbox.checked {
-            background: var(--greece-blue);
-        }
+        .checkbox.checked { background: var(--greece-blue); }
 
         .checkbox.checked::after {
             content: '✓';
             position: absolute;
             color: white;
             font-size: 16px;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             transform: translate(-50%, -50%);
         }
 
-        .checkbox-label {
-            flex: 1;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            cursor: pointer;
-        }
+        .checkbox-label { flex: 1; font-size: 0.95rem; line-height: 1.5; cursor: pointer; }
 
-        /* Info Cards */
         .info-card {
             background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
             border-radius: 16px;
@@ -329,9 +404,7 @@
             margin-bottom: 1.5rem;
         }
 
-        .info-card.warning {
-            background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
-        }
+        .info-card.warning { background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); }
 
         .info-card h4 {
             font-family: 'Karla', sans-serif;
@@ -343,18 +416,9 @@
             gap: 0.5rem;
         }
 
-        .info-card p {
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: rgba(0,0,0,0.7);
-        }
+        .info-card p { font-size: 0.9rem; line-height: 1.6; color: rgba(0,0,0,0.7); }
 
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
+        .contact-grid { display: grid; gap: 1rem; margin-top: 1rem; }
 
         .contact-item {
             background: white;
@@ -363,32 +427,14 @@
             border: 1px solid #f0f0f0;
         }
 
-        .contact-item strong {
-            display: block;
-            font-size: 0.85rem;
-            color: var(--light-text);
-            margin-bottom: 0.25rem;
-        }
+        .contact-item strong { display: block; font-size: 0.85rem; color: var(--light-text); margin-bottom: 0.25rem; }
+        .contact-item a { color: var(--greece-blue); text-decoration: none; font-weight: 600; }
 
-        .contact-item a {
-            color: var(--greece-blue);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* Footer */
         .footer {
             text-align: center;
             padding: 2rem 1rem 3rem;
             color: var(--light-text);
             font-size: 0.85rem;
-        }
-
-        /* Loading State */
-        .loading {
-            text-align: center;
-            padding: 2rem;
-            color: var(--light-text);
         }
     </style>
 </head>
@@ -401,12 +447,14 @@
     <div class="nav-tabs">
         <button class="nav-tab active" data-tab="greece">🇬🇷 Santorini</button>
         <button class="nav-tab" data-tab="rome">🇮🇹 Rome</button>
+        <button class="nav-tab" data-tab="food">🍽️ Food</button>
         <button class="nav-tab" data-tab="checklist">✓ To-Do</button>
         <button class="nav-tab" data-tab="info">📚 Info</button>
         <button class="nav-tab" data-tab="contacts">📞 Contact</button>
     </div>
 
     <div class="content">
+
         <!-- SANTORINI TAB -->
         <div class="tab-content active" id="greece">
             <div class="day-card">
@@ -702,10 +750,10 @@
 
             <div class="day-card">
                 <div class="day-header" onclick="toggleDay(this)">
-                    <div class="day-number rome">4</div>
+                    <div class="day-number rome">5</div>
                     <div class="day-title">
                         <h3>Final Day & Checkout</h3>
-                        <p>Friday, May 8</p>
+                        <p>Saturday, May 9</p>
                     </div>
                     <span class="expand-icon">▼</span>
                 </div>
@@ -738,6 +786,437 @@
             </div>
         </div>
 
+        <!-- FOOD TAB -->
+        <div class="tab-content" id="food">
+
+            <!-- SANTORINI SECTION -->
+            <div class="food-section-header">
+                <span class="food-section-title">🇬🇷 Santorini</span>
+                <div class="food-section-line"></div>
+            </div>
+
+            <div class="info-card" style="margin-bottom:1.25rem;">
+                <h4>📍 Map: Near Limestone Suites</h4>
+                <p>Tap any restaurant below for directions. All Fira picks are under 10 min walk from your hotel!</p>
+            </div>
+
+            <!-- ISLAND-WIDE MUST-DOS -->
+            <p style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--light-text);margin-bottom:0.75rem;">🌟 Island Must-Dos (short drive)</p>
+
+            <div class="restaurant-card">
+                <div class="restaurant-header">
+                    <div class="restaurant-emoji">🌿</div>
+                    <div class="restaurant-meta">
+                        <div class="restaurant-name">Metaxi Mas</div>
+                        <div class="restaurant-tags">
+                            <span class="tag tag-vibe">Hidden Gem</span>
+                            <span class="tag tag-price">€€ Mid-range</span>
+                            <span class="tag tag-walk">~15 min drive</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-stars">⭐ 4.7</div>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-desc">The best food on the island — hands down. Village taverna in Exo Gonia, away from all the tourists. Cretan-leaning menu with sea views. Bring cash. Non-negotiable booking.</div>
+                    <div class="restaurant-order">
+                        <strong>Order This</strong>
+                        <p>Grilled octopus, dolmades, fava, lamb shank. Free raki + olives to start. Free dessert at end.</p>
+                    </div>
+                </div>
+                <a class="maps-btn" href="https://maps.google.com/?cid=3014753837389930898" target="_blank">📍 Open in Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <div class="restaurant-header">
+                    <div class="restaurant-emoji">🌸</div>
+                    <div class="restaurant-meta">
+                        <div class="restaurant-name">Candouni</div>
+                        <div class="restaurant-tags">
+                            <span class="tag tag-vibe">Romantic + Live Music</span>
+                            <span class="tag tag-price">€€ Mid-range</span>
+                            <span class="tag tag-walk">Oia (~25 min drive)</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-stars">⭐ 4.1</div>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-desc">Hidden garden restaurant in Oia run by a passionate family. Acoustic live music, magical atmosphere, never rushed. A honeymoon meal you'll talk about forever. Pair with Dimitris Ammoudi for a full Oia day.</div>
+                    <div class="restaurant-order">
+                        <strong>Order This</strong>
+                        <p>Lamb, fresh fish, Greek salad, their own house wine. Save room for baklava.</p>
+                    </div>
+                </div>
+                <a class="maps-btn" href="https://maps.google.com/?cid=1144025896544862458" target="_blank">📍 Open in Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <div class="restaurant-header">
+                    <div class="restaurant-emoji">🦐</div>
+                    <div class="restaurant-meta">
+                        <div class="restaurant-name">Dimitris Ammoudi Tavern</div>
+                        <div class="restaurant-tags">
+                            <span class="tag tag-vibe">Waterfront Seafood</span>
+                            <span class="tag tag-price">€€ Mid-range</span>
+                            <span class="tag tag-walk">Ammoudi Bay, Oia</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-stars">⭐ 4.4</div>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-desc">Right on the water at Ammoudi Bay below Oia. Down steep stairs but worth every step. You'll love the shrimp pasta; your husband will love the grilled fish. Kelsey — get the prawns saganaki.</div>
+                    <div class="restaurant-order">
+                        <strong>Order This</strong>
+                        <p>Prawns saganaki (Kelsey!), grilled red snapper, octopus, seafood rice. Lunch is easier to get a table than dinner.</p>
+                    </div>
+                </div>
+                <a class="maps-btn" href="https://maps.google.com/?cid=521517919361099697" target="_blank">📍 Open in Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <div class="restaurant-header">
+                    <div class="restaurant-emoji">✨</div>
+                    <div class="restaurant-meta">
+                        <div class="restaurant-name">Athenian House</div>
+                        <div class="restaurant-tags">
+                            <span class="tag tag-vibe">Romantic Splurge</span>
+                            <span class="tag tag-price">€€€€ Fine dining</span>
+                            <span class="tag tag-walk">Imerovigli (~10 min drive)</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-stars">⭐ 4.2</div>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-desc">Michelin-level execution perched above the caldera in Imerovigli. Dim candlelit domed interiors, sunset views, white linen. Book for sunset. This is your special occasion dinner.</div>
+                    <div class="restaurant-order">
+                        <strong>Order This</strong>
+                        <p>Beef carpaccio starter, seafood pasta, fish of the day. End with baklava. Book 1 month ahead!</p>
+                    </div>
+                </div>
+                <a class="maps-btn" href="https://maps.google.com/?cid=18243145552838290368" target="_blank">📍 Open in Google Maps</a>
+            </div>
+
+            <!-- FIRA WALKABLE -->
+            <p style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--light-text);margin:1.5rem 0 0.75rem;">🚶 Walk from Hotel (Under 10 min)</p>
+
+            <div class="restaurant-card">
+                <div class="restaurant-header">
+                    <div class="restaurant-emoji">🌟</div>
+                    <div class="restaurant-meta">
+                        <div class="restaurant-name">Fusionnelle <span class="nearby-badge">5 min</span></div>
+                        <div class="restaurant-tags">
+                            <span class="tag tag-vibe">Perfect Rating</span>
+                            <span class="tag tag-price">€€ Mid-range</span>
+                            <span class="tag tag-walk">8 min walk</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-stars">⭐ 5.0</div>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-desc">A perfect 5.0 stars with 1,100+ reviews — almost unheard of. Open from 8am for breakfast too. Warm, friendly staff, beautiful atmosphere. Great for any meal of the day.</div>
+                    <div class="restaurant-order">
+                        <strong>Order This</strong>
+                        <p>Santorini tomato fritters, risotto, moussaka. For dessert: portokalopita (Greek orange cake). Incredible.</p>
+                    </div>
+                </div>
+                <a class="maps-btn" href="https://maps.google.com/?cid=1384675336908486570" target="_blank">📍 Open in Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <div class="restaurant-header">
+                    <div class="restaurant-emoji">🦞</div>
+                    <div class="restaurant-meta">
+                        <div class="restaurant-name">Triana Tavern <span class="nearby-badge">6 min</span></div>
+                        <div class="restaurant-tags">
+                            <span class="tag tag-vibe">Lively Seafood</span>
+                            <span class="tag tag-price">€€ Mid-range</span>
+                            <span class="tag tag-walk">6 min walk</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-stars">⭐ 4.8</div>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-desc">4.8 stars with 4,000+ reviews. A huge lobster pasta that reviewers say could feed five. Free dessert wine at the end of every meal. Very lively, very good value for Santorini.</div>
+                    <div class="restaurant-order">
+                        <strong>Order This</strong>
+                        <p>Lobster pasta (share it!), seafood risotto, grilled octopus. Say yes to the dessert wine shot.</p>
+                    </div>
+                </div>
+                <a class="maps-btn" href="https://maps.google.com/?cid=16930632147115803962" target="_blank">📍 Open in Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <div class="restaurant-header">
+                    <div class="restaurant-emoji">🏆</div>
+                    <div class="restaurant-meta">
+                        <div class="restaurant-name">Tholoto <span class="nearby-badge">8 min</span></div>
+                        <div class="restaurant-tags">
+                            <span class="tag tag-vibe">Special Occasion</span>
+                            <span class="tag tag-price">€€€ Splurge</span>
+                            <span class="tag tag-walk">8 min walk</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-stars">⭐ 4.9</div>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-desc">4.9 stars with 5,200+ reviews — the highest-rated upscale spot near you. Stunning views, beautifully presented dishes, exceptional service. Your closest splurge option.</div>
+                    <div class="restaurant-order">
+                        <strong>Order This</strong>
+                        <p>Shrimp & scallop risotto, lamb shank, eggplant cheesecake starter. End with the chocolate soufflé.</p>
+                    </div>
+                </div>
+                <a class="maps-btn" href="https://maps.google.com/?cid=1376316018598534504" target="_blank">📍 Open in Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <div class="restaurant-header">
+                    <div class="restaurant-emoji">🌿</div>
+                    <div class="restaurant-meta">
+                        <div class="restaurant-name">Veranda Restaurant <span class="nearby-badge">6 min</span></div>
+                        <div class="restaurant-tags">
+                            <span class="tag tag-vibe">Hidden Gem</span>
+                            <span class="tag tag-price">€€ Mid-range</span>
+                            <span class="tag tag-walk">6 min walk</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-stars">⭐ 4.9</div>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-desc">Open-air patio with a genuine local feel. Owner personally greets guests and makes recommendations. Low-key hidden gem with surprisingly great food. Locals eat here.</div>
+                    <div class="restaurant-order">
+                        <strong>Order This</strong>
+                        <p>Stuffed calamari (their signature!), lamb kleftiko, pork souvlaki. Great value for quality.</p>
+                    </div>
+                </div>
+                <a class="maps-btn" href="https://maps.google.com/?cid=14086262440719660342" target="_blank">📍 Open in Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <div class="restaurant-header">
+                    <div class="restaurant-emoji">🍋</div>
+                    <div class="restaurant-meta">
+                        <div class="restaurant-name">Naoussa <span class="nearby-badge">3 min</span></div>
+                        <div class="restaurant-tags">
+                            <span class="tag tag-vibe">Lively + Caldera Views</span>
+                            <span class="tag tag-price">€€ Mid-range</span>
+                            <span class="tag tag-walk">3 min walk</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-stars">⭐ 4.1</div>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-desc">Legendary lively atmosphere — the owner DJs, serves wine, and throws plates (Greek tradition!). Caldera views from the top terrace. Hands out free wine to people waiting outside. Great energy.</div>
+                    <div class="restaurant-order">
+                        <strong>Order This</strong>
+                        <p>Dips for two, prawns with mushrooms, stifado. Large portions, reasonable prices. Go for the vibe!</p>
+                    </div>
+                </div>
+                <a class="maps-btn" href="https://maps.google.com/?cid=5036467577015153371" target="_blank">📍 Open in Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <div class="restaurant-header">
+                    <div class="restaurant-emoji">🍷</div>
+                    <div class="restaurant-meta">
+                        <div class="restaurant-name">Pelican Kipos <span class="nearby-badge">4 min</span></div>
+                        <div class="restaurant-tags">
+                            <span class="tag tag-vibe">Garden Wine Bar</span>
+                            <span class="tag tag-price">€€ Mid-range</span>
+                            <span class="tag tag-walk">4 min walk</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-stars">⭐ 4.7</div>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-desc">Beautiful garden restaurant with a wine cellar carved into the rock below — ask for a tour! Romantic but lively. Amazing for an evening when you want a relaxed, long dinner with great wine.</div>
+                    <div class="restaurant-order">
+                        <strong>Order This</strong>
+                        <p>Seafood linguine, sautéed pork in Assyrtiko wine sauce, grilled octopus. Ask for the wine cellar tour!</p>
+                    </div>
+                </div>
+                <a class="maps-btn" href="https://maps.google.com/?cid=12457602289030422564" target="_blank">📍 Open in Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <div class="restaurant-header">
+                    <div class="restaurant-emoji">⭐</div>
+                    <div class="restaurant-meta">
+                        <div class="restaurant-name">Parea Tavern <span class="nearby-badge">4 min</span></div>
+                        <div class="restaurant-tags">
+                            <span class="tag tag-vibe">Rooftop Terrace</span>
+                            <span class="tag tag-price">€€ Mid-range</span>
+                            <span class="tag tag-walk">4 min walk</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-stars">⭐ 4.7</div>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-desc">Rooftop terrace with city views, attentive service, and generous complimentary cheesecake jars at the end. One of the most consistent restaurants in Fira — people rave about every dish.</div>
+                    <div class="restaurant-order">
+                        <strong>Order This</strong>
+                        <p>Moussaka (best in Fira), grilled seafood platter, fava with pita. Save room for their surprise dessert!</p>
+                    </div>
+                </div>
+                <a class="maps-btn" href="https://maps.google.com/?cid=17911543980275170388" target="_blank">📍 Open in Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <div class="restaurant-header">
+                    <div class="restaurant-emoji">🥙</div>
+                    <div class="restaurant-meta">
+                        <div class="restaurant-name">Lucky's Souvlakis <span class="nearby-badge">3 min</span></div>
+                        <div class="restaurant-tags">
+                            <span class="tag tag-vibe">Cheap & Fun</span>
+                            <span class="tag tag-price">€ Budget</span>
+                            <span class="tag tag-walk">3 min walk</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-stars">⭐ 4.5</div>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-desc">The best €4 gyro of your life. Get this after the Oia-Fira hike — you'll have earned it. Pillowy warm pita, crispy chicken, tzatziki, tomato. Eat at the little square across the street.</div>
+                    <div class="restaurant-order">
+                        <strong>Order This</strong>
+                        <p>Chicken gyro in pita — full stop. Add a Mythos beer. Pay inside, pick up outside.</p>
+                    </div>
+                </div>
+                <a class="maps-btn" href="https://maps.google.com/?cid=5053155027059338828" target="_blank">📍 Open in Google Maps</a>
+            </div>
+
+            <!-- ROME SECTION -->
+            <div class="food-section-header" style="margin-top:2.5rem;">
+                <span class="food-section-title">🇮🇹 Rome</span>
+                <div class="food-section-line"></div>
+            </div>
+
+            <div class="info-card" style="margin-bottom:1.25rem;">
+                <h4>📍 All within 14–35 min of Hotel Artemide</h4>
+                <p>Renato e Luisa, Armando & Emma are easy walks. Da Enzo & Flavio need a quick 10-min taxi — worth it!</p>
+            </div>
+
+            <div class="restaurant-card">
+                <div class="restaurant-header">
+                    <div class="restaurant-emoji">💎</div>
+                    <div class="restaurant-meta">
+                        <div class="restaurant-name">Renato e Luisa</div>
+                        <div class="restaurant-tags">
+                            <span class="tag tag-vibe">Hidden Gem</span>
+                            <span class="tag tag-price">€€ Mid-range</span>
+                            <span class="tag tag-walk">14 min walk</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-stars">⭐ 4.6</div>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-desc">Tucked away on a tiny street near Largo Argentina — you genuinely can't find it unless you know it's there. The owner personally attends every table. Best carbonara in Rome according to a Roman friend who recommended it.</div>
+                    <div class="restaurant-order">
+                        <strong>Order This</strong>
+                        <p>Carbonara or cacio e pepe (pasta), fiori di zucca starter, goat cheese with walnut and honey. Book ahead — dinner only Tue–Sat.</p>
+                    </div>
+                </div>
+                <a class="maps-btn rome" href="https://maps.google.com/?cid=16684119116065829270" target="_blank">📍 Open in Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <div class="restaurant-header">
+                    <div class="restaurant-emoji">🏛️</div>
+                    <div class="restaurant-meta">
+                        <div class="restaurant-name">Armando al Pantheon</div>
+                        <div class="restaurant-tags">
+                            <span class="tag tag-vibe">Roman Institution</span>
+                            <span class="tag tag-price">€€ Mid-range</span>
+                            <span class="tag tag-walk">14 min walk</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-stars">⭐ 4.3</div>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-desc">Open since 1961, three generations of the same family. Right next to the Pantheon. This is where you come for classic Roman cooking at its most authentic — the food is the same as it was 60 years ago. Book 1 month ahead.</div>
+                    <div class="restaurant-order">
+                        <strong>Order This</strong>
+                        <p>Spaghetti carbonara, cacio e pepe, arugula salad to start, Torta Antica Roma dessert. Ask for wine pairing.</p>
+                    </div>
+                </div>
+                <a class="maps-btn rome" href="https://maps.google.com/?cid=10519819257705820414" target="_blank">📍 Open in Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <div class="restaurant-header">
+                    <div class="restaurant-emoji">🍕</div>
+                    <div class="restaurant-meta">
+                        <div class="restaurant-name">Emma Pizzeria</div>
+                        <div class="restaurant-tags">
+                            <span class="tag tag-vibe">Pizza Night</span>
+                            <span class="tag tag-price">€€€ Mid-high</span>
+                            <span class="tag tag-walk">14 min walk</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-stars">⭐ 4.2</div>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-desc">Near Campo de' Fiori. San Marzano tomatoes, fresh mozzarella, sourdough crust — the margherita here will ruin other pizza for you. Great for a casual pizza-and-wine evening. Can book online.</div>
+                    <div class="restaurant-order">
+                        <strong>Order This</strong>
+                        <p>Margherita pizza, cacio e pepe pasta, supplì (fried rice balls) as a starter. Tiramisu espresso for dessert.</p>
+                    </div>
+                </div>
+                <a class="maps-btn rome" href="https://maps.google.com/?cid=16962878075521334176" target="_blank">📍 Open in Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <div class="restaurant-header">
+                    <div class="restaurant-emoji">🍝</div>
+                    <div class="restaurant-meta">
+                        <div class="restaurant-name">Trattoria Da Enzo al 29</div>
+                        <div class="restaurant-tags">
+                            <span class="tag tag-vibe">Lively Trattoria</span>
+                            <span class="tag tag-price">€€ Mid-range</span>
+                            <span class="tag tag-walk">10 min taxi · Trastevere</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-stars">⭐ 4.3</div>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-desc">The quintessential Roman trattoria experience — tiny, packed, lively, impossibly good food. No reservations, so arrive by 7pm. Worth the wait. Trastevere neighborhood is beautiful to walk around before dinner.</div>
+                    <div class="restaurant-order">
+                        <strong>Order This</strong>
+                        <p>Carbonara, amatriciana, crispy fried starters, meatballs. Tiramisu with nocciola for dessert. House red wine.</p>
+                    </div>
+                </div>
+                <a class="maps-btn rome" href="https://maps.google.com/?cid=13079102255380409080" target="_blank">📍 Open in Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <div class="restaurant-header">
+                    <div class="restaurant-emoji">🍅</div>
+                    <div class="restaurant-meta">
+                        <div class="restaurant-name">Flavio al Velavevodetto</div>
+                        <div class="restaurant-tags">
+                            <span class="tag tag-vibe">Locals Only</span>
+                            <span class="tag tag-price">€€ Mid-range</span>
+                            <span class="tag tag-walk">10 min taxi · Testaccio</span>
+                        </div>
+                    </div>
+                    <div class="restaurant-stars">⭐ 4.2</div>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-desc">Built into an ancient hill made of Roman wine jar fragments. Very local, no tourist food — they don't serve chicken alfredo or spaghetti meatballs here. Order whatever they suggest. Testaccio is Rome's food neighborhood.</div>
+                    <div class="restaurant-order">
+                        <strong>Order This</strong>
+                        <p>Rigatoni all'amatriciana (best in Rome!), burrata, puntarella with anchovy sauce. Ask them to order for you — it works!</p>
+                    </div>
+                </div>
+                <a class="maps-btn rome" href="https://maps.google.com/?cid=12705961208626251742" target="_blank">📍 Open in Google Maps</a>
+            </div>
+
+            <div class="info-card warning" style="margin-top:1.5rem;">
+                <h4>🍋 Don't Miss: Street Bites</h4>
+                <p><strong>Supplì</strong> — fried rice balls with tomato & mozzarella. Get them as street food near Campo de' Fiori. Your dream snack.<br><br>
+                <strong>Gelato</strong> — Come il Latte or La Romana. Never from a shop with gelato piled high in mounds — that's tourist gelato.<br><br>
+                <strong>Sant' Eustachio Caffè</strong> — Best espresso in Rome. Order at the counter. Buy beans to bring home.</p>
+            </div>
+
+        </div>
+
         <!-- CHECKLIST TAB -->
         <div class="tab-content" id="checklist">
             <div class="checklist-section">
@@ -757,12 +1236,36 @@
                 <div class="checkbox-item">
                     <div class="checkbox" onclick="toggleCheck(this)"></div>
                     <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        <strong>Metaxi Mas (Santorini)</strong> - Best food on island! Call +30 2286 031323 or book online at santorini-metaximas.gr
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        <strong>Athenian House (Santorini)</strong> - Sunset splurge dinner. Book 1 month ahead! theathenianhouse.com or +30 2286 036420
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        <strong>Renato e Luisa (Rome)</strong> - Hidden gem, books up fast! renatoeluisa.it or +39 06 686 9660
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
+                        <strong>Armando al Pantheon (Rome)</strong> - Book 1 month ahead! armandoalpantheon.it or +39 06 6880 3034
+                    </div>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
                         <strong>Theoni's (Santorini)</strong> - Day 4 dinner after hike. Usually walk-in OK but can call ahead
                     </div>
                 </div>
                 <div class="info-card" style="margin-top: 1rem;">
                     <h4>💡 Tip</h4>
-                    <p>Most Santorini restaurants don't take reservations. Just show up! Rome restaurants fill up more - book the two above for sure.</p>
+                    <p>Most Santorini restaurants don't take reservations. Just show up! Rome restaurants fill up more - book the above for sure.</p>
                 </div>
             </div>
 
@@ -805,7 +1308,7 @@
                 <div class="checkbox-item">
                     <div class="checkbox" onclick="toggleCheck(this)"></div>
                     <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
-                        <strong>Santorini: Wine Tour</strong> - Santorini Wine Adventure Tours or Santorini Wine Tour. Day 4.
+                        <strong>Santorini: Wine Tour</strong> - Santorini Wine Adventure Tours or Santorini Wine Tour. Day 3.
                     </div>
                 </div>
             </div>
@@ -839,13 +1342,13 @@
                 <div class="checkbox-item">
                     <div class="checkbox" onclick="toggleCheck(this)"></div>
                     <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
-                        Get €200-300 cash
+                        Get €200-300 cash (Metaxi Mas prefers cash!)
                     </div>
                 </div>
                 <div class="checkbox-item">
                     <div class="checkbox" onclick="toggleCheck(this)"></div>
                     <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
-                        Arrange taxi for Oia hike morning (Day 3)
+                        Arrange taxi for Oia hike morning (Day 4)
                     </div>
                 </div>
             </div>
@@ -915,7 +1418,7 @@
                 <div class="checkbox-item">
                     <div class="checkbox" onclick="toggleCheck(this)"></div>
                     <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
-                        <strong>EU power adapters - Type C & F</strong> (3-4 recommended for phones, laptops, hairdryer)
+                        <strong>EU power adapters - Type C & F</strong> (3-4 recommended)
                     </div>
                 </div>
                 <div class="checkbox-item">
@@ -946,18 +1449,6 @@
                     <div class="checkbox" onclick="toggleCheck(this)"></div>
                     <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
                         Copies of passports, travel insurance, tickets (digital & printed)
-                    </div>
-                </div>
-                <div class="checkbox-item">
-                    <div class="checkbox" onclick="toggleCheck(this)"></div>
-                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
-                        Small umbrella (just in case + shade)
-                    </div>
-                </div>
-                <div class="checkbox-item">
-                    <div class="checkbox" onclick="toggleCheck(this)"></div>
-                    <div class="checkbox-label" onclick="toggleCheck(this.previousElementSibling)">
-                        Reusable shopping bag (for souvenirs, beach trips)
                     </div>
                 </div>
                 <div class="checkbox-item">
@@ -996,302 +1487,155 @@
 
             <div class="info-card warning">
                 <h4>⚠️ Important Reminders</h4>
-                <p>• Oia-Fira hike Day 3: START 7-8 AM!<br>
+                <p>• Oia-Fira hike Day 4: START 7-8 AM!<br>
                 • Red Beach: 10-min rough path walk<br>
                 • Kokkalo closed Mondays<br>
                 • Wine Tours closed Sundays<br>
-                • Angelo's closed Mon-Tue (if choosing)</p>
+                • Metaxi Mas: bring cash!</p>
             </div>
         </div>
 
-        <!-- INFO TAB (NEW) -->
+        <!-- INFO TAB -->
         <div class="tab-content" id="info">
             
-            <!-- DAY COUNTER -->
             <div class="checklist-section" style="background: linear-gradient(135deg, #FFE5E5 0%, #FFD0D0 100%); text-align: center; padding: 2rem 1.5rem;">
                 <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">💍 Honeymoon Day Counter</h3>
-                <div id="dayCounter" style="font-size: 3rem; font-family: 'Playfair Display', serif; color: var(--greece-blue); margin: 1rem 0;">
-                    Day ?
-                </div>
-                <p id="dayMessage" style="font-size: 1.1rem; font-style: italic; color: var(--dark-text);">
-                    Loading...
-                </p>
+                <div id="dayCounter" style="font-size: 3rem; font-family: 'Playfair Display', serif; color: var(--greece-blue); margin: 1rem 0;">Day ?</div>
+                <p id="dayMessage" style="font-size: 1.1rem; font-style: italic; color: var(--dark-text);">Loading...</p>
             </div>
 
-            <!-- FLIGHT DETAILS -->
             <div class="checklist-section">
                 <h3>✈️ Flight Details</h3>
-                
                 <div style="margin-bottom: 1.5rem;">
                     <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--greece-blue);">🇺🇸 → 🇬🇷 Las Vegas to Santorini (Apr 30)</h4>
-                    
                     <div style="background: #F0F8FF; padding: 1rem; border-radius: 12px; margin-bottom: 0.75rem;">
-                        <strong>Flight 1: DL0755</strong><br>
-                        Las Vegas (LAS) → Atlanta (ATL)<br>
-                        Arrival: 12:49 PM EST
+                        <strong>Flight 1: DL0755</strong><br>Las Vegas (LAS) → Atlanta (ATL)<br>Arrival: 12:49 PM EST
                     </div>
-                    
                     <div style="background: #F0F8FF; padding: 1rem; border-radius: 12px; margin-bottom: 0.75rem;">
-                        <strong>Flight 2: DL0222</strong><br>
-                        Atlanta (ATL) → Athens (ATH)<br>
-                        Arrival: 11:00 AM (next day)
+                        <strong>Flight 2: DL0222</strong><br>Atlanta (ATL) → Athens (ATH)<br>Arrival: 11:00 AM (next day)
                     </div>
-                    
                     <div style="background: #F0F8FF; padding: 1rem; border-radius: 12px; margin-bottom: 0.75rem;">
-                        <strong>Flight 3: GQ0350</strong><br>
-                        Athens (ATH) → Santorini (JTR)<br>
-                        Arrival: 2:55 PM local time 🎉
+                        <strong>Flight 3: GQ0350</strong><br>Athens (ATH) → Santorini (JTR)<br>Arrival: 2:55 PM local time 🎉
                     </div>
-                    
                     <div class="info-card">
                         <h4>💡 Travel Day Tips</h4>
-                        <p>• Download Delta app for real-time updates<br>
-                        • Long layover in ATL - grab food before international flight<br>
-                        • Athens layover - check gate for Santorini flight early<br>
-                        • Arrive Santorini 2:55 PM - perfect timing for sunset! 🌅</p>
+                        <p>• Download Delta app for real-time updates<br>• Long layover in ATL - grab food before international flight<br>• Athens layover - check gate for Santorini flight early<br>• Arrive Santorini 2:55 PM - perfect timing for sunset! 🌅</p>
                     </div>
                 </div>
-
                 <div style="margin-bottom: 1.5rem;">
                     <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--rome-terracotta);">🇬🇷 → 🇮🇹 Santorini to Rome (May 5)</h4>
                     <div style="background: #FFF5F0; padding: 1rem; border-radius: 12px;">
-                        <strong>⚠️ BOOK THIS FLIGHT!</strong><br>
-                        Not booked yet - add details when confirmed
+                        <strong>⚠️ BOOK THIS FLIGHT!</strong><br>Not booked yet - add details when confirmed
                     </div>
                 </div>
-
                 <div>
                     <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: #4A5568;">🇮🇹 → 🇬🇧 Rome to London (May 8)</h4>
                     <div style="background: #F7F7F7; padding: 1rem; border-radius: 12px;">
-                        <strong>⚠️ BOOK THIS FLIGHT!</strong><br>
-                        Not booked yet - add details when confirmed
+                        <strong>⚠️ BOOK THIS FLIGHT!</strong><br>Not booked yet - add details when confirmed
                     </div>
                 </div>
             </div>
 
-            <!-- DAY COUNTER -->
             <div class="checklist-section">
                 <h3>🌤️ Weather & What to Wear</h3>
-                
                 <div style="margin-bottom: 1.5rem;">
                     <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--greece-blue);">🇬🇷 Santorini (Apr 30 - May 5)</h4>
-                    <div style="background: #F0F8FF; padding: 1rem; border-radius: 12px; margin-bottom: 0.75rem;">
-                        <strong>Temperature:</strong> 68-75°F (20-24°C)<br>
-                        <strong>Conditions:</strong> Mostly sunny, minimal rain<br>
-                        <strong>What to Wear:</strong> Light layers, sundresses, shorts, swimsuit. Bring light jacket for evenings and boat cruise. HIKING SHOES essential for Day 3!
+                    <div style="background: #F0F8FF; padding: 1rem; border-radius: 12px;">
+                        <strong>Temperature:</strong> 68-75°F (20-24°C)<br><strong>Conditions:</strong> Mostly sunny, minimal rain<br><strong>What to Wear:</strong> Light layers, sundresses, shorts, swimsuit. Bring light jacket for evenings and boat cruise. HIKING SHOES essential for Day 4!
                     </div>
                 </div>
-
                 <div>
                     <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--rome-terracotta);">🇮🇹 Rome (May 5 - 8)</h4>
                     <div style="background: #FFF5F0; padding: 1rem; border-radius: 12px;">
-                        <strong>Temperature:</strong> 64-73°F (18-23°C)<br>
-                        <strong>Conditions:</strong> Sunny with occasional clouds<br>
-                        <strong>What to Wear:</strong> Comfortable walking shoes (cobblestones!), light layers. Modest clothing for churches (covered shoulders/knees). Light cardigan for evenings.
+                        <strong>Temperature:</strong> 64-73°F (18-23°C)<br><strong>Conditions:</strong> Sunny with occasional clouds<br><strong>What to Wear:</strong> Comfortable walking shoes (cobblestones!), light layers. Modest clothing for churches. Light cardigan for evenings.
                     </div>
                 </div>
             </div>
 
-            <!-- TRANSPORTATION GUIDE -->
             <div class="checklist-section">
                 <h3>🚕 Transportation Guide</h3>
-                
                 <div style="margin-bottom: 1.5rem;">
                     <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">🇬🇷 Santorini Airport → Limestone Suites</h4>
                     <div style="background: #F8F8F8; padding: 1rem; border-radius: 12px; margin-bottom: 0.5rem;">
-                        <strong>Distance:</strong> ~6 km (4 miles)<br>
-                        <strong>Time:</strong> 10-15 minutes<br>
-                        <strong>Best Option:</strong> Pre-book hotel transfer OR taxi at airport<br>
-                        <strong>Cost:</strong> €15-25<br>
-                        <strong>Apps:</strong> Beat (Greek ride-hailing app) or FreeNow
+                        <strong>Distance:</strong> ~6 km (4 miles)<br><strong>Time:</strong> 10-15 minutes<br><strong>Best Option:</strong> Pre-book hotel transfer OR taxi at airport<br><strong>Cost:</strong> €15-25<br><strong>Apps:</strong> Beat (Greek ride-hailing app) or FreeNow
                     </div>
                     <div class="info-card">
                         <h4>💡 Tip</h4>
-                        <p>Ask Limestone Suites if they offer complimentary airport pickup - many luxury hotels do!</p>
+                        <p>Ask Limestone Suites if they offer complimentary airport pickup!</p>
                     </div>
                 </div>
-
                 <div style="margin-bottom: 1.5rem;">
                     <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">🇮🇹 Rome Airport → Hotel Artemide</h4>
                     <div style="background: #F8F8F8; padding: 1rem; border-radius: 12px; margin-bottom: 0.5rem;">
-                        <strong>From:</strong> Fiumicino Airport (FCO)<br>
-                        <strong>Distance:</strong> 32 km (20 miles)<br>
-                        <strong>Time:</strong> 45-60 minutes<br>
-                        <strong>Options:</strong><br>
-                        • <strong>Leonardo Express Train</strong> - €14/person, 32 min to Termini (hotel is 5 min walk)<br>
-                        • <strong>Taxi</strong> - Fixed rate €50 to city center<br>
-                        • <strong>Uber/FreeNow</strong> - €45-60<br>
-                        <strong>Recommended:</strong> Leonardo Express + short walk (easiest with luggage)
+                        <strong>From:</strong> Fiumicino Airport (FCO)<br><strong>Leonardo Express Train</strong> - €14/person, 32 min to Termini (5 min walk to hotel)<br><strong>Taxi</strong> - Fixed rate €50<br><strong>Recommended:</strong> Leonardo Express (easiest with luggage)
                     </div>
                 </div>
-
                 <div>
                     <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">🚶 Walking Times in Rome</h4>
                     <div style="background: #F8F8F8; padding: 1rem; border-radius: 12px;">
-                        <strong>Hotel Artemide → Colosseum:</strong> 20 min walk<br>
-                        <strong>Hotel Artemide → Trevi Fountain:</strong> 15 min walk<br>
-                        <strong>Hotel Artemide → Termini Station:</strong> 5 min walk<br>
-                        <strong>Trastevere → Hotel:</strong> 30 min walk OR 15 min taxi
+                        <strong>Hotel → Colosseum:</strong> 20 min walk<br><strong>Hotel → Trevi Fountain:</strong> 15 min walk<br><strong>Hotel → Termini Station:</strong> 5 min walk<br><strong>Trastevere → Hotel:</strong> 30 min walk OR 15 min taxi
                     </div>
-                </div>
-
-                <div class="info-card" style="margin-top: 1rem;">
-                    <h4>🚖 Taxi Apps for Rome</h4>
-                    <p><strong>FreeNow</strong> - Most reliable, like Uber<br>
-                    <strong>Uber</strong> - Available but limited<br>
-                    <strong>IT Taxi</strong> - Official Rome taxi app<br>
-                    Download before you arrive!</p>
                 </div>
             </div>
 
-            <!-- WINE TOUR DETAILS -->
             <div class="checklist-section">
                 <h3>🍷 Wine Tour - Saturday, May 2</h3>
-                
                 <div class="info-card">
                     <h4>✅ Perfect Timing!</h4>
                     <p>May 2 is Saturday - wine tours available! (Many close Sundays)</p>
                 </div>
-
                 <div style="margin-top: 1rem;">
-                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">📋 Recommended: Santorini Wine Tour</h4>
-                    <div class="contact-grid">
-                        <div class="contact-item">
-                            <strong>Santorini Wine Tour</strong><br>
-                            Rating: ⭐ 5.0 (137 reviews)<br>
-                            Available Saturdays!<br>
-                            Search "Santorini Wine Tour" on TripAdvisor or Viator to book
-                        </div>
-                        <div class="contact-item">
-                            <strong>Note:</strong><br>
-                            Santorini Wine Adventure Tours doesn't have Saturday availability.<br>
-                            Santorini Wine Tour is excellent alternative with perfect 5.0 rating!
-                        </div>
-                    </div>
-                </div>
-
-                <div style="margin-top: 1rem;">
-                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">📍 What's Included</h4>
                     <div style="background: #F8F8F8; padding: 1rem; border-radius: 12px;">
-                        ✓ Hotel pickup & dropoff<br>
-                        ✓ Visit 3 traditional wineries<br>
-                        ✓ Wine tastings at each location<br>
-                        ✓ Lunch at traditional taverna<br>
-                        ✓ Learn about volcanic soil & unique grapes<br>
-                        ✓ Duration: ~5 hours<br>
-                        ✓ Cost: €70-100 per person
+                        ✓ Hotel pickup & dropoff<br>✓ Visit 3 traditional wineries<br>✓ Wine tastings at each location<br>✓ Lunch at traditional taverna<br>✓ Duration: ~5 hours • Cost: €70-100 per person
                     </div>
                 </div>
-
                 <div class="info-card warning" style="margin-top: 1rem;">
                     <h4>💡 Pro Tips</h4>
-                    <p>• Book 4-6 weeks ahead (popular in May!)<br>
-                    • Morning tour better if you want dinner after<br>
-                    • Try Assyrtiko (white) and Vinsanto (dessert wine)<br>
-                    • Bring camera - vineyards have stunning caldera views!</p>
+                    <p>• Book 4-6 weeks ahead (popular in May!)<br>• Try Assyrtiko (white) and Vinsanto (dessert wine)<br>• Bring camera - vineyards have stunning caldera views!</p>
                 </div>
             </div>
 
-            <!-- EMERGENCY PHRASES -->
             <div class="checklist-section">
                 <h3>💬 Essential Phrases</h3>
-                
                 <div style="margin-bottom: 1.5rem;">
                     <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--greece-blue);">🇬🇷 Greek Phrases</h4>
                     <div style="background: #F0F8FF; padding: 1rem; border-radius: 12px; line-height: 1.8;">
                         <strong>Hello</strong> - Yassas (YAH-sahs)<br>
                         <strong>Thank you</strong> - Efharisto (ef-kha-ree-STOH)<br>
-                        <strong>Please</strong> - Parakalo (pah-rah-kah-LOH)<br>
-                        <strong>Excuse me</strong> - Signomi (see-GNOH-mee)<br>
-                        <strong>Yes / No</strong> - Ne / Ochi (neh / OH-khee)<br>
-                        <strong>How much?</strong> - Poso kani? (POH-soh KAH-nee)<br>
-                        <strong>Check please</strong> - To logariasmo parakalo (toh loh-gah-ree-ah-SMOH pah-rah-kah-LOH)<br>
+                        <strong>Cheers!</strong> - Yamas! (YAH-mahs)<br>
                         <strong>Delicious!</strong> - Nostimo! (NOH-stee-moh)<br>
-                        <strong>Cheers!</strong> - Yamas! (YAH-mahs)
+                        <strong>Check please</strong> - To logariasmo parakalo
                     </div>
                 </div>
-
                 <div>
                     <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--rome-terracotta);">🇮🇹 Italian Phrases</h4>
                     <div style="background: #FFF5F0; padding: 1rem; border-radius: 12px; line-height: 1.8;">
-                        <strong>Hello</strong> - Ciao (CHOW) / Buongiorno (bwohn-JOHR-noh)<br>
+                        <strong>Hello</strong> - Ciao (CHOW)<br>
                         <strong>Thank you</strong> - Grazie (GRAHT-see-eh)<br>
-                        <strong>Please</strong> - Per favore (pehr fah-VOH-reh)<br>
-                        <strong>Excuse me</strong> - Scusi (SKOO-zee)<br>
-                        <strong>Yes / No</strong> - Sì / No (see / noh)<br>
-                        <strong>How much?</strong> - Quanto costa? (KWAN-toh KOH-stah)<br>
-                        <strong>Check please</strong> - Il conto per favore (eel KOHN-toh pehr fah-VOH-reh)<br>
-                        <strong>Delicious!</strong> - Delizioso! (deh-lee-tsee-OH-soh)<br>
                         <strong>Cheers!</strong> - Salute! (sah-LOO-teh)<br>
-                        <strong>Where is...?</strong> - Dov'è...? (doh-VEH)
+                        <strong>Delicious!</strong> - Delizioso! (deh-lee-tsee-OH-soh)<br>
+                        <strong>Check please</strong> - Il conto per favore
                     </div>
-                </div>
-
-                <div class="info-card" style="margin-top: 1rem;">
-                    <h4>💡 Language Tips</h4>
-                    <p>• English widely spoken in tourist areas<br>
-                    • Locals LOVE when you try their language<br>
-                    • Download Google Translate offline<br>
-                    • Point & smile works everywhere! 😊</p>
                 </div>
             </div>
 
-            <!-- BACKUP PLANS -->
             <div class="checklist-section">
-                <h3>🌧️ Backup Plans (Just in Case!)</h3>
-                
+                <h3>🌧️ Backup Plans</h3>
                 <div class="info-card">
                     <h4>☀️ Good News!</h4>
-                    <p>May in Greece and Italy is typically gorgeous! But here are alternatives if weather doesn't cooperate:</p>
+                    <p>May in Greece and Italy is typically gorgeous! But just in case:</p>
                 </div>
-
                 <div style="margin-top: 1rem;">
                     <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">If Oia-Fira Hike Too Challenging:</h4>
                     <div style="background: #F8F8F8; padding: 1rem; border-radius: 12px; margin-bottom: 1rem;">
-                        <strong>Option 1:</strong> Take bus/taxi to Oia, explore the town, take bus/taxi back to Fira<br>
-                        <strong>Option 2:</strong> Cable car down to old port in Fira, explore, cable car back up<br>
-                        <strong>Option 3:</strong> Visit Pyrgos village - cute, less touristy, amazing views, minimal walking<br>
-                        <strong>Option 4:</strong> Relax at hotel pool, spa day, sunset from Fira
+                        <strong>Option 1:</strong> Take bus/taxi to Oia, explore, bus back<br><strong>Option 2:</strong> Cable car down to old port in Fira<br><strong>Option 3:</strong> Visit Pyrgos village - cute, less touristy<br><strong>Option 4:</strong> Hotel pool & spa day ✨
                     </div>
                 </div>
-
-                <div style="margin-top: 1rem;">
-                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">If Rain in Santorini:</h4>
-                    <div style="background: #F8F8F8; padding: 1rem; border-radius: 12px; margin-bottom: 1rem;">
-                        • Wine tour still runs (indoor tastings!)<br>
-                        • Museum of Prehistoric Thera in Fira<br>
-                        • Shopping in Fira boutiques<br>
-                        • Cooking class (many hotels offer)<br>
-                        • Spa treatment at hotel<br>
-                        • Long lunch at cozy taverna
-                    </div>
-                </div>
-
-                <div>
-                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">If Rain in Rome:</h4>
-                    <div style="background: #F8F8F8; padding: 1rem; border-radius: 12px;">
-                        • All museums/churches still perfect!<br>
-                        • Vatican Museums (not on current itinerary but amazing)<br>
-                        • Galleria Borghese (already planned - even better in rain)<br>
-                        • Long lunch at traditional trattoria<br>
-                        • Shopping on Via del Corso<br>
-                        • Coffee & pastry hopping<br>
-                        • Pantheon (covered inside!)
-                    </div>
-                </div>
-
                 <div class="info-card warning" style="margin-top: 1rem;">
                     <h4>⚡ Energy Savers</h4>
-                    <p>Honeymoons are marathons, not sprints! If you need to skip an activity:<br>
-                    • Day 3 hike → Sleep in, leisurely breakfast<br>
-                    • Day 5 Red Beach → Skip entirely, relax before travel<br>
-                    • Rome churches → Pick just one favorite<br>
-                    • Any meal → Order room service, nap instead!<br>
-                    <br>
-                    It's YOUR honeymoon - do what feels right! ❤️</p>
+                    <p>It's YOUR honeymoon - do what feels right! Skip anything, order room service, nap, and enjoy each other. ❤️</p>
                 </div>
             </div>
-
         </div>
 
         <!-- CONTACTS TAB -->
@@ -1308,6 +1652,18 @@
                         <a href="tel:+302286034123">+30 2286 034123</a>
                     </div>
                     <div class="contact-item">
+                        <strong>Metaxi Mas</strong>
+                        <a href="tel:+302286031323">+30 2286 031323</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Athenian House</strong>
+                        <a href="tel:+302286036420">+30 2286 036420</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Pelican Kipos</strong>
+                        <a href="tel:+302286023433">+30 2286 023433</a>
+                    </div>
+                    <div class="contact-item">
                         <strong>Emergency (Greece)</strong>
                         <a href="tel:112">112</a>
                     </div>
@@ -1317,6 +1673,14 @@
             <div class="checklist-section">
                 <h3>🇮🇹 Rome Contacts</h3>
                 <div class="contact-grid">
+                    <div class="contact-item">
+                        <strong>Renato e Luisa</strong>
+                        <a href="tel:+390668699660">+39 06 686 9660</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Armando al Pantheon</strong>
+                        <a href="tel:+390668803034">+39 06 6880 3034</a>
+                    </div>
                     <div class="contact-item">
                         <strong>Catacombs San Sebastiano</strong>
                         <a href="tel:+390667850350">+39 06 785 0350</a>
@@ -1340,23 +1704,24 @@
             <div class="info-card warning">
                 <h4>🏨 Hotels</h4>
                 <p><strong>Santorini (Apr 30 - May 5):</strong><br>
-                Limestone Suites<br>
-                Fira, Santorini<br>
-                <a href="https://limestonesantorini.com/" target="_blank">limestonesantorini.com</a></p>
+                Limestone Suites, Fira<br>
+                <a href="https://limestonesantorini.com/" target="_blank">limestonesantorini.com</a><br>
+                <a href="tel:+302286025443">+30 2286 025443</a></p>
                 <p style="margin-top: 0.75rem;"><strong>Rome (May 5 - May 8):</strong><br>
-                Hotel Artemide<br>
-                Via Nazionale 22, near Termini<br>
+                Hotel Artemide, Via Nazionale 22<br>
                 <a href="https://www.hotelartemide.it/" target="_blank">hotelartemide.it</a><br>
-                Phone: <a href="tel:+390648911">+39 06 489911</a></p>
+                <a href="tel:+3906489911">+39 06 489911</a></p>
             </div>
 
             <div class="info-card">
                 <h4>📱 Useful Apps</h4>
                 <p>• Google Maps (download offline!)<br>
                 • Google Translate<br>
+                • FreeNow (taxis in both cities)<br>
                 • Your banking app for tap-to-pay</p>
             </div>
         </div>
+
     </div>
 
     <div class="footer">
@@ -1365,112 +1730,80 @@
     </div>
 
     <script>
-        // Tab switching
         document.querySelectorAll('.nav-tab').forEach(tab => {
             tab.addEventListener('click', () => {
-                // Update active tab
                 document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
-                
-                // Show corresponding content
                 const tabName = tab.getAttribute('data-tab');
-                document.querySelectorAll('.tab-content').forEach(content => {
-                    content.classList.remove('active');
-                });
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
                 document.getElementById(tabName).classList.add('active');
-                
-                // Scroll to top
                 window.scrollTo({top: 0, behavior: 'smooth'});
             });
         });
 
-        // Expandable day cards
         function toggleDay(header) {
             const card = header.parentElement;
             card.classList.toggle('expanded');
         }
 
-        // Checkbox functionality with localStorage
         function toggleCheck(checkbox) {
             checkbox.classList.toggle('checked');
             saveCheckboxState();
         }
 
-        // Save checkbox states to localStorage
         function saveCheckboxState() {
             const checkboxes = document.querySelectorAll('.checkbox');
             const states = Array.from(checkboxes).map(cb => cb.classList.contains('checked'));
             localStorage.setItem('travelCheckboxes', JSON.stringify(states));
         }
 
-        // Load checkbox states from localStorage
         function loadCheckboxState() {
             const saved = localStorage.getItem('travelCheckboxes');
             if (saved) {
                 const states = JSON.parse(saved);
                 const checkboxes = document.querySelectorAll('.checkbox');
                 checkboxes.forEach((cb, index) => {
-                    if (states[index]) {
-                        cb.classList.add('checked');
-                    }
+                    if (states[index]) cb.classList.add('checked');
                 });
             }
         }
 
-        // Load saved state on page load
         window.addEventListener('load', loadCheckboxState);
 
-        // Honeymoon Day Counter
         function updateDayCounter() {
-            const startDate = new Date('2026-04-30T15:00:00'); // April 30, 3 PM
-            const endDate = new Date('2026-05-08T23:59:59'); // May 8, end of day
+            const startDate = new Date('2026-04-30T15:00:00');
+            const endDate = new Date('2026-05-08T23:59:59');
             const now = new Date();
-            
             const dayCounterEl = document.getElementById('dayCounter');
             const dayMessageEl = document.getElementById('dayMessage');
             
             if (now < startDate) {
-                // Before trip
                 const daysUntil = Math.ceil((startDate - now) / (1000 * 60 * 60 * 24));
                 dayCounterEl.textContent = daysUntil + ' days';
-                dayMessageEl.textContent = daysUntil === 1 
-                    ? 'Tomorrow your honeymoon begins! 🎉' 
-                    : 'Until your honeymoon begins! 🎉';
+                dayMessageEl.textContent = daysUntil === 1 ? 'Tomorrow your honeymoon begins! 🎉' : 'Until your honeymoon begins! 🎉';
             } else if (now >= startDate && now <= endDate) {
-                // During trip
                 const dayNumber = Math.floor((now - startDate) / (1000 * 60 * 60 * 24)) + 1;
                 dayCounterEl.textContent = 'Day ' + dayNumber;
-                
                 const messages = [
                     "Welcome to paradise! Your honeymoon has begun! 💕",
                     "Making memories on the magical caldera! ✨",
-                    "Epic adventures await today! 🥾",
                     "Sipping wine with your love! 🍷",
+                    "Epic adventures on the Oia hike! 🥾",
                     "Travel day - Rome awaits! ✈️",
                     "Welcome to the Eternal City! 🏛️",
                     "Exploring ancient wonders together! ⚡",
                     "More Roman adventures! 🍝",
                     "Final day in Rome - cherish every moment! 💫"
                 ];
-                
                 dayMessageEl.textContent = messages[dayNumber - 1] || "Every moment is precious! 💍";
             } else {
-                // After trip
                 dayCounterEl.textContent = 'Complete! ✓';
                 dayMessageEl.textContent = 'What amazing memories you created! 💕';
             }
         }
         
-        // Update counter on load
         updateDayCounter();
-        
-        // Update counter every hour
         setInterval(updateDayCounter, 3600000);
-
-        // Add service worker for offline capability
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('data:text/javascript;base64,');
-        }
     </script>
 </body>
 </html>
